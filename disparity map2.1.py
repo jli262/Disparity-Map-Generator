@@ -101,16 +101,16 @@ _, H1, H2 = cv.stereoRectifyUncalibrated(
 img1_rectified = cv.warpPerspective(img1, H1, (w1, h1))
 img2_rectified = cv.warpPerspective(img2, H2, (w2, h2))
 
-# Draw the rectified images
-fig, axes = plt.subplots(1, 2, figsize=(15, 10))
-axes[0].imshow(img1_rectified, cmap="gray")
-axes[1].imshow(img2_rectified, cmap="gray")
-axes[0].axvline(250)
-axes[1].axvline(250)
-axes[0].axvline(450)
-axes[1].axvline(450)
-plt.suptitle("Rectified images")
-plt.show()
+# # Draw the rectified images
+# fig, axes = plt.subplots(1, 2, figsize=(15, 10))
+# axes[0].imshow(img1_rectified, cmap="gray")
+# axes[1].imshow(img2_rectified, cmap="gray")
+# axes[0].axvline(250)
+# axes[1].axvline(250)
+# axes[0].axvline(450)
+# axes[1].axvline(450)
+# plt.suptitle("Rectified images")
+# plt.show()
 
 # ------------------------------------------------------------
 # CALCULATE DISPARITY (DEPTH MAP)
@@ -123,7 +123,7 @@ plt.show()
 # Matched block size. It must be an odd number >=1 . Normally, it should be somewhere in the 3..11 range.
 block_size = 3
 min_disp = -152
-max_disp = 152
+max_disp = 184
 # Maximum disparity minus minimum disparity. The value is always greater than zero.
 # In the current implementation, this parameter must be divisible by 16.
 num_disp = max_disp - min_disp
