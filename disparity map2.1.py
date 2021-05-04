@@ -101,6 +101,17 @@ _, H1, H2 = cv.stereoRectifyUncalibrated(
 img1_rectified = cv.warpPerspective(img1, H1, (w1, h1))
 img2_rectified = cv.warpPerspective(img2, H2, (w2, h2))
 
+# Draw the rectified images
+fig, axes = plt.subplots(1, 2, figsize=(15, 10))
+axes[0].imshow(img1_rectified, cmap="gray")
+axes[1].imshow(img2_rectified, cmap="gray")
+axes[0].axvline(250)
+axes[1].axvline(250)
+axes[0].axvline(450)
+axes[1].axvline(450)
+plt.suptitle("Rectified images")
+plt.show()
+
 # ------------------------------------------------------------
 # CALCULATE DISPARITY (DEPTH MAP)
 # Adapted from: https://github.com/opencv/opencv/blob/master/samples/python/stereo_match.py
