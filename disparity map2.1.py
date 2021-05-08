@@ -122,8 +122,8 @@ img2_rectified = cv.warpPerspective(img2, H2, (w2, h2))
 
 # Matched block size. It must be an odd number >=1 . Normally, it should be somewhere in the 3..11 range.
 block_size = 3
-min_disp = -152
-max_disp = 184
+min_disp = -144
+max_disp = 176
 # Maximum disparity minus minimum disparity. The value is always greater than zero.
 # In the current implementation, this parameter must be divisible by 16.
 num_disp = max_disp - min_disp
@@ -156,4 +156,4 @@ disparity_SGBM = stereo.compute(img1_rectified, img2_rectified)
 disparity_SGBM = cv.normalize(disparity_SGBM, disparity_SGBM, alpha=255,
                               beta=0, norm_type=cv.NORM_MINMAX)
 disparity_SGBM = np.uint8(disparity_SGBM)
-cv.imwrite("pred/Art/disp1.png", disparity_SGBM)
+cv.imwrite("D:/Disparity-Map-Generator/PSNR_Assignment2/2.1 output/disp1.png", disparity_SGBM)
